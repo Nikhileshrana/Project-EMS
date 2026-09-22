@@ -2,7 +2,8 @@ import { mongooseAdapter } from '@payloadcms/db-mongodb'
 import { lexicalEditor } from '@payloadcms/richtext-lexical'
 import { vercelBlobStorage } from '@payloadcms/storage-vercel-blob'
 import path from 'path'
-import { buildConfig } from 'payload/config'
+import { buildConfig } from 'payload'
+import sharp from 'sharp'
 import { fileURLToPath } from 'url'
 
 import { Media } from './collections/Media'
@@ -23,6 +24,9 @@ const blobToken = getBlobReadWriteToken()
 export default buildConfig({
   admin: {
     user: Users.slug,
+    importMap: {
+      baseDir: path.resolve(dirname),
+    },
   },
   collections: [Users, Posts, Media],
   editor: lexicalEditor({}),
@@ -33,6 +37,7 @@ export default buildConfig({
   db: mongooseAdapter({
     url: getDatabaseURL(),
   }),
+  sharp,
   plugins: [
     vercelBlobStorage({
       enabled: isVercelBlobEnabled(),

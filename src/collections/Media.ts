@@ -1,5 +1,5 @@
 import { getDbName } from '@/lib/env'
-import type { CollectionConfig } from 'payload/types'
+import type { CollectionConfig } from 'payload'
 import path from 'path'
 import { fileURLToPath } from 'url'
 
