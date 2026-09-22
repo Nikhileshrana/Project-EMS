@@ -31,6 +31,9 @@ yarn-error.log*
 # local env files
 .env*.local
 
+# payload uploads (local fallback when BLOB_READ_WRITE_TOKEN is unset)
+/uploads
+
 # vercel
 .vercel
 

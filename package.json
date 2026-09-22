@@ -17,6 +17,7 @@
     "@payloadcms/db-mongodb": "3.90.1",
     "@payloadcms/next": "3.90.1",
     "@payloadcms/richtext-lexical": "3.90.1",
+    "@payloadcms/storage-vercel-blob": "3.90.1",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "cross-env": "^7.0.3",
@@ -43,5 +44,12 @@
   },
   "engines": {
     "node": ">=18.19.0"
-  }
+  },
+  "packageManager": "bun@1.4.0",
+  "trustedDependencies": [
+    "esbuild",
+    "sharp",
+    "unrs-resolver",
+    "workerd"
+  ]
 }
